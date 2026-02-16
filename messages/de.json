@@ -1,0 +1,50 @@
+{
+    "hero": {
+        "name": "Ayoub Rezaei",
+        "title": "Senior Front-End-Entwickler"
+    },
+    "summary": {
+        "heading": "Über Mich",
+        "text": "Senior Front-End-Entwickler mit über 6 Jahren Erfahrung in der Entwicklung skalierbarer Webanwendungen. Experte für große CI/CD-Pipelines und AGILE Scrum-Methodik, der Hochleistungslösungen für Unternehmenskunden liefert."
+    },
+    "experience": {
+        "heading": "Berufserfahrung",
+        "iceGlobal": {
+            "company": "Ice Global",
+            "location": "Portugal",
+            "role": "Senior Front-End-Entwickler",
+            "period": "2022 - Heute",
+            "description": "Leitung wichtiger Epics für über 10.000 tägliche Nutzer. Entwicklung von Integrationstestframeworks und Implementierung von Leistungsoptimierungen."
+        },
+        "hitTheBooks": {
+            "company": "Hit The Books",
+            "location": "Kanada",
+            "role": "Senior Front-End-Entwickler",
+            "period": "2021 - 2022",
+            "description": "Verbesserung der Systemstabilität und Lösung von über 45 kritischen Fehlern. Verbesserung der Benutzererfahrung durch systematisches Debugging und Refactoring."
+        },
+        "drSaina": {
+            "company": "Dr Saina",
+            "location": "Iran",
+            "role": "Senior JavaScript-Entwickler",
+            "period": "2020 - 2021",
+            "description": "Vollständiges Refactoring eines Produkts mit über 100.000 täglichen Nutzern von Legacy-Stack zu Next.js geleitet, wodurch die Leistung um 60% verbessert wurde."
+        },
+        "optimeAi": {
+            "company": "OPTIME AI",
+            "location": "Iran",
+            "role": "React-Entwickler",
+            "period": "2019 - 2020",
+            "description": "Entwicklung von Flottenmanagement-Dashboards und erfolgreiche Umstellung von Angular-Anwendungen auf moderne React-Architektur."
+        }
+    },
+    "skills": {
+        "heading": "Technische Fähigkeiten"
+    },
+    "education": {
+        "heading": "Ausbildung",
+        "degree": "Bachelor of Computer Engineering",
+        "university": "Ilam University",
+        "location": "Iran"
+    }
+}
