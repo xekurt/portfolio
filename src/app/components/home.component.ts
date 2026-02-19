@@ -10,7 +10,7 @@ import { ContactComponent } from './contact.component';
   imports: [HeroComponent, AboutComponent, PartnershipsComponent, ContactComponent],
   template: `
     <app-hero></app-hero>
-    <app-about></app-about>
+    <app-about id="about"></app-about>
     <app-partnerships id="partnerships"></app-partnerships>
     <app-contact id="contact"></app-contact>
   `
