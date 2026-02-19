@@ -356,7 +356,7 @@ export class ContactComponent {
       const formData = this.contactForm.value;
 
       // Using Formspree for real email delivery
-      this.http.post('https://formspree.io/f/mqaebrjr', formData).subscribe({
+      this.http.post('https://formspree.io/f/xeelloel', formData).subscribe({
         next: (response) => {
           this.isSending = false;
           this.showSuccess = true;
