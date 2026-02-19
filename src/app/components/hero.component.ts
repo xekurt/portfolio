@@ -19,7 +19,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
             {{ 'HERO.DESCRIPTION' | translate }}
           </p>
           <div class="cta-group">
-            <button class="primary-btn" (click)="scrollToAbout()">{{ 'HERO.CTA_PRIMARY' | translate }}</button>
+            <button class="primary-btn">{{ 'HERO.CTA_PRIMARY' | translate }}</button>
             <button class="secondary-btn">{{ 'HERO.CTA_SECONDARY' | translate }}</button>
           </div>
         </div>
