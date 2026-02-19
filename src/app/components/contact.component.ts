@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { LucideAngularModule, Mail, MapPin, Github, Linkedin, Send, Loader2 } from 'lucide-angular';
 
@@ -79,6 +80,7 @@ import { LucideAngularModule, Mail, MapPin, Github, Linkedin, Send, Loader2 } fr
                     class="form-input"
                     [class.error]="isFieldInvalid('name')"
                   >
+                  <span class="error-msg" *ngIf="isFieldInvalid('name')">Name is required</span>
                 </div>
                 <div class="form-group mb-0">
                   <label class="form-label">{{ 'CONTACT.EMAIL' | translate }}</label>
@@ -89,10 +91,11 @@ import { LucideAngularModule, Mail, MapPin, Github, Linkedin, Send, Loader2 } fr
                     class="form-input"
                     [class.error]="isFieldInvalid('email')"
                   >
+                  <span class="error-msg" *ngIf="isFieldInvalid('email')">Valid email required</span>
                 </div>
               </div>
 
-              <div class="form-group">
+              <div class="form-group mb-8">
                 <label class="form-label">{{ 'CONTACT.SUBJECT' | translate }}</label>
                 <input 
                   type="text" 
@@ -101,6 +104,7 @@ import { LucideAngularModule, Mail, MapPin, Github, Linkedin, Send, Loader2 } fr
                   class="form-input"
                   [class.error]="isFieldInvalid('subject')"
                 >
+                <span class="error-msg" *ngIf="isFieldInvalid('subject')">Subject is required</span>
               </div>
 
               <div class="form-group mb-10">
@@ -112,12 +116,14 @@ import { LucideAngularModule, Mail, MapPin, Github, Linkedin, Send, Loader2 } fr
                   class="form-input resize-none"
                   [class.error]="isFieldInvalid('message')"
                 ></textarea>
+                <span class="error-msg" *ngIf="isFieldInvalid('message')">Message must be 10+ characters</span>
               </div>
 
               <button 
                 type="submit" 
-                [disabled]="contactForm.invalid || isSending"
+                [disabled]="isSending"
                 class="submit-btn w-full group"
+                [style.opacity]="contactForm.invalid ? '0.6' : '1'"
               >
                 <span *ngIf="!isSending" class="flex items-center justify-center gap-3">
                   {{ 'CONTACT.SUBMIT' | translate }}
@@ -132,6 +138,9 @@ import { LucideAngularModule, Mail, MapPin, Github, Linkedin, Send, Loader2 } fr
               <div class="h-6 mt-4">
                 <p *ngIf="showSuccess" class="text-emerald-400 text-center font-mono text-sm animate-pulse">
                   {{ 'CONTACT.SUCCESS_MESSAGE' | translate }}
+                </p>
+                <p *ngIf="showError" class="text-red-400 text-center font-mono text-sm">
+                  Oops! Something went wrong. Please try again.
                 </p>
               </div>
             </form>
@@ -211,7 +220,19 @@ import { LucideAngularModule, Mail, MapPin, Github, Linkedin, Send, Loader2 } fr
     }
 
     .form-group {
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .error-msg {
+      position: absolute;
+      bottom: -1.25rem;
+      left: 0.5rem;
+      font-size: 0.65rem;
+      color: #f87171;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .form-input {
@@ -301,6 +322,7 @@ import { LucideAngularModule, Mail, MapPin, Github, Linkedin, Send, Loader2 } fr
 })
 export class ContactComponent {
   private fb = inject(FormBuilder);
+  private http = inject(HttpClient);
 
   readonly MapPinIcon = MapPin;
   readonly MailIcon = Mail;
@@ -311,6 +333,7 @@ export class ContactComponent {
 
   isSending = false;
   showSuccess = false;
+  showError = false;
 
   contactForm: FormGroup = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
@@ -324,18 +347,31 @@ export class ContactComponent {
     return field ? field.invalid && (field.dirty || field.touched) : false;
   }
 
-  async onSubmit() {
+  onSubmit() {
     if (this.contactForm.valid) {
       this.isSending = true;
+      this.showError = false;
+      this.showSuccess = false;
 
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const formData = this.contactForm.value;
 
-      this.isSending = false;
-      this.showSuccess = true;
-      this.contactForm.reset();
-
-      setTimeout(() => this.showSuccess = false, 5000);
+      // Using Formspree for real email delivery
+      this.http.post('https://formspree.io/f/mqaebrjr', formData).subscribe({
+        next: (response) => {
+          this.isSending = false;
+          this.showSuccess = true;
+          this.contactForm.reset();
+          setTimeout(() => (this.showSuccess = false), 5000);
+        },
+        error: (err) => {
+          console.error('Email send failed:', err);
+          this.isSending = false;
+          this.showError = true;
+          setTimeout(() => (this.showError = false), 5000);
+        }
+      });
+    } else {
+      this.contactForm.markAllAsTouched();
     }
   }
 }
