@@ -10,51 +10,51 @@ import { Company } from '../models/company.model';
   standalone: true,
   imports: [CommonModule, RouterModule, TranslateModule, LucideAngularModule],
   template: `
-    <section class="detail-page py-24 min-h-screen" *ngIf="company">
-      <div class="container mx-auto px-4">
-        <button routerLink="/" fragment="partnerships" class="back-btn mb-12 group">
-          <lucide-angular [img]="ArrowLeftIcon" size="18" class="group-hover:-translate-x-1 transition-transform"></lucide-angular>
+    <section class="detail-page" *ngIf="company">
+      <div class="container">
+        <button routerLink="/" fragment="partnerships" class="back-btn">
+          <lucide-angular [img]="ArrowLeftIcon" size="18" class="back-icon"></lucide-angular>
           <span>{{ 'COMMON.BACK_TO_PARTNERSHIPS' | translate }}</span>
         </button>
 
-        <div class="glass-detail-card p-8 md:p-12">
-          <div class="flex flex-col md:flex-row gap-8 items-start mb-12">
-            <div class="logo-large flex items-center justify-center shrink-0">
+        <div class="glass-detail-card">
+          <div class="card-header">
+            <div class="logo-large">
                <span class="fallback-text">{{ company.name.charAt(0) }}</span>
             </div>
             
-            <div class="flex-1">
-              <h1 class="text-4xl md:text-5xl font-bold text-text-main mb-2 font-heading">
+            <div class="header-content">
+              <h1 class="company-name">
                 {{ company.name }}
               </h1>
-              <div class="flex flex-col gap-4">
-                <span class="text-xl font-mono text-accent uppercase tracking-tighter">{{ company.role }}</span>
-                <div class="flex items-center gap-2 text-text-muted">
-                  <lucide-angular [img]="CalendarIcon" size="16" class="text-accent"></lucide-angular>
-                  <span class="font-mono text-sm uppercase tracking-wider">{{ company.duration }}</span>
+              <div class="header-info">
+                <span class="role-text">{{ company.role }}</span>
+                <div class="duration-box">
+                  <lucide-angular [img]="CalendarIcon" size="16" class="duration-icon"></lucide-angular>
+                  <span class="duration-text">{{ company.duration }}</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div class="lg:col-span-2 space-y-12">
+          <div class="content-grid">
+            <div class="main-content">
               <div class="detail-section">
-                <div class="flex items-center gap-3 mb-6">
-                  <lucide-angular [img]="RocketIcon" class="text-accent"></lucide-angular>
-                  <h3 class="text-xl font-bold text-text-main uppercase tracking-widest font-mono">{{ 'PARTNERSHIPS.DETAIL.CONTRIBUTION' | translate }}</h3>
+                <div class="section-title-box">
+                  <lucide-angular [img]="RocketIcon" class="section-icon"></lucide-angular>
+                  <h3 class="section-title">{{ 'PARTNERSHIPS.DETAIL.CONTRIBUTION' | translate }}</h3>
                 </div>
-                <p class="text-lg leading-relaxed text-text-main opacity-90 font-body">
+                <p class="description-text">
                   {{ company.longDescription }}
                 </p>
               </div>
 
               <div class="detail-section">
-                <div class="flex items-center gap-3 mb-6">
-                  <lucide-angular [img]="Code2Icon" class="text-accent"></lucide-angular>
-                  <h3 class="text-xl font-bold text-text-main uppercase tracking-widest font-mono">{{ 'PARTNERSHIPS.DETAIL.TECH_STACK' | translate }}</h3>
+                <div class="section-title-box">
+                  <lucide-angular [img]="Code2Icon" class="section-icon"></lucide-angular>
+                  <h3 class="section-title">{{ 'PARTNERSHIPS.DETAIL.TECH_STACK' | translate }}</h3>
                 </div>
-                <div class="flex flex-wrap gap-3">
+                <div class="tech-stack-list">
                   <span *ngFor="let tech of company.techStack" class="tech-badge">
                     {{ tech }}
                   </span>
@@ -62,10 +62,10 @@ import { Company } from '../models/company.model';
               </div>
             </div>
 
-            <div class="lg:col-span-1">
-               <div class="sidebar-box p-6 rounded-2xl border border-white/5 bg-white/5">
-                  <h4 class="text-sm font-bold text-text-muted uppercase tracking-tighter mb-4">{{ 'PARTNERSHIPS.DETAIL.SUMMARY' | translate }}</h4>
-                  <p class="text-sm text-text-main leading-relaxed">
+            <div class="sidebar">
+               <div class="sidebar-box">
+                  <h4 class="sidebar-title">{{ 'PARTNERSHIPS.DETAIL.SUMMARY' | translate }}</h4>
+                  <p class="sidebar-text">
                     {{ company.shortDescription }}
                   </p>
                </div>
@@ -79,11 +79,19 @@ import { Company } from '../models/company.model';
     .detail-page {
       position: relative;
       z-index: 10;
+      padding: 6rem 0;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
 
     .back-btn {
       display: flex;
-      items-center: center;
+      align-items: center;
       gap: 0.75rem;
       color: var(--text-secondary);
       font-weight: 600;
@@ -91,18 +99,52 @@ import { Company } from '../models/company.model';
       font-family: var(--font-mono);
       text-transform: uppercase;
       font-size: 0.8rem;
+      margin-bottom: 3rem;
+      background: none;
+      border: none;
+      cursor: pointer;
     }
 
     .back-btn:hover {
       color: var(--accent);
     }
 
+    .back-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .back-btn:hover .back-icon {
+      transform: translateX(-4px);
+    }
+
     .glass-detail-card {
-      border-radius: 2rem;
+      border-radius: 2.5rem;
       background: rgba(255, 255, 255, 0.02);
       backdrop-filter: blur(24px);
       border: 1px solid rgba(255, 255, 255, 0.05);
       box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
+      padding: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .glass-detail-card {
+        padding: 4rem;
+      }
+    }
+
+    .card-header {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: flex-start;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .card-header {
+        flex-direction: row;
+        gap: 3rem;
+      }
     }
 
     .logo-large {
@@ -111,25 +153,178 @@ import { Company } from '../models/company.model';
       border-radius: 24px;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .fallback-text {
+      font-size: 3.5rem;
       font-weight: 800;
       color: var(--accent);
       font-family: var(--font-heading);
     }
 
+    .header-content {
+      flex: 1;
+    }
+
+    .company-name {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+      font-family: var(--font-heading);
+      line-height: 1.1;
+    }
+
+    @media (min-width: 768px) {
+      .company-name {
+        font-size: 3.5rem;
+      }
+    }
+
+    .header-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .role-text {
+      font-size: 1.25rem;
+      font-family: var(--font-mono);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+    }
+
+    .duration-box {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text-muted);
+    }
+
+    .duration-text {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .duration-icon {
+      color: var(--accent);
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .content-grid {
+        grid-template-columns: 2fr 1fr;
+        gap: 4rem;
+      }
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    .section-title-box {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .section-icon {
+      color: var(--accent);
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-family: var(--font-mono);
+    }
+
+    .description-text {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: var(--text-main);
+      opacity: 0.9;
+      font-family: var(--font-body);
+    }
+
+    .tech-stack-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
     .tech-badge {
-      padding: 0.5rem 1.25rem;
+      padding: 0.6rem 1.4rem;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 0.75rem;
+      border-radius: 0.85rem;
       color: var(--accent);
-      font-size: 0.85rem;
+      font-size: 0.875rem;
       font-weight: 700;
       font-family: var(--font-mono);
+      transition: all 0.3s ease;
+    }
+
+    .tech-badge:hover {
+      background: rgba(var(--accent-rgb), 0.1);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .sidebar-box {
+      padding: 2rem;
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.02);
+      position: sticky;
+      top: 6rem;
+    }
+
+    .sidebar-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.25rem;
+      font-family: var(--font-mono);
+    }
+
+    .sidebar-text {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      line-height: 1.6;
+      opacity: 0.8;
     }
 
     :host-context([dir="rtl"]) .detail-page {
       text-align: right;
+    }
+
+    :host-context([dir="rtl"]) .back-btn {
+      flex-direction: row-reverse;
+    }
+
+    :host-context([dir="rtl"]) .back-btn:hover .back-icon {
+      transform: translateX(4px);
     }
   `]
 })
