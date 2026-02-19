@@ -1,0 +1,74 @@
+{
+    "NAME": "Ayoub Rezaei",
+    "ROLE": "Front-End-Entwickler",
+    "LOCATION": "Klagenfurt, Österreich",
+    "NAV": {
+        "ABOUT": "Über mich",
+        "PARTNERSHIPS": "Partnerschaften",
+        "CONTACT": "Kontakt"
+    },
+    "HERO": {
+        "GREETING": "Hallo, ich bin",
+        "NAME": "Ayoub Rezaei.",
+        "SUBTITLE": "Erfahrener Front-End-Entwickler.",
+        "DESCRIPTION": "Mit 6 Jahren Expertise in der Erstellung von Hochleistungs-Webanwendungen mit React, Next.js, Vue und Angular. Derzeit erweitere ich meinen Horizont in der immersiven Welt des Game Engineerings.",
+        "CTA_PRIMARY": "Projekte ansehen",
+        "CTA_SECONDARY": "Kontakt aufnehmen"
+    },
+    "ABOUT": {
+        "TITLE": "Über mich",
+        "BIO_TITLE": "Beruflicher Werdegang",
+        "BIO_CONTENT": "Kreativer Front-End-Entwickler mit 6 Jahren professioneller Erfahrung in der Erstellung skalierbarer Hochleistungs-Webanwendungen. Ich spezialisiere mich auf moderne Architekturen wie React, Next.js, Vue und Angular, um nahtlose digitale Erlebnisse mit Fokus auf sauberen, wartbaren Code zu liefern.",
+        "ENGINEERING_TITLE": "Advanced Graphics Engineering",
+        "ENGINEERING_CONTENT": "Mit einem Bachelor in Software-Engineering schlage ich die Brücke zwischen reinen Webtechnologien und Hochleistungs-Visualisierungen. Mein Engagement für technische Tiefe zeigt sich in meiner Expertise in OpenGL, WebGL und Three.js.",
+        "BENTO": {
+            "EXPERIENCE_LABEL": "Erfahrung",
+            "EXPERIENCE_VALUE": "6+ Jahre",
+            "STACK_LABEL": "Kern-Stack",
+            "TOOLS_LABEL": "DevOps & Automatisierung",
+            "LOCATION_LABEL": "Standort",
+            "LOCATION_VALUE": "Klagenfurt, Österreich",
+            "CHESS_LABEL": "Schach-Rating",
+            "CHESS_VALUE": "700-800 ELO",
+            "BODYBUILDING_LABEL": "Persönliche Disziplin",
+            "BODYBUILDING_VALUE": "Bodybuilding",
+            "INTERESTS_TITLE": "Jenseits des Codes"
+        }
+    },
+    "PARTNERSHIPS": {
+        "TITLE": "Frühere Partnerschaften",
+        "DETAIL": {
+            "CONTRIBUTION": "Mein Beitrag",
+            "TECH_STACK": "Tech-Stack",
+            "SUMMARY": "Kurze Zusammenfassung"
+        }
+    },
+    "COMMON": {
+        "BACK_TO_PARTNERSHIPS": "Zurück zu Partnerschaften"
+    },
+    "CONTACT": {
+        "TITLE": "Kontaktieren Sie mich",
+        "GET_IN_TOUCH": "In Kontakt treten",
+        "LOCATION_LABEL": "Mein Standort",
+        "LOCATION_VALUE": "Klagenfurt, Österreich",
+        "EMAIL_LABEL": "E-Mail-Adresse",
+        "SOCIAL_LABEL": "Digitale Präsenz",
+        "NAME": "Name",
+        "NAME_PLACEHOLDER": "Ihr Name",
+        "EMAIL": "E-Mail",
+        "EMAIL_PLACEHOLDER": "ihre@email.de",
+        "SUBJECT": "Betreff",
+        "SUBJECT_PLACEHOLDER": "Wie kann ich helfen?",
+        "MESSAGE": "Nachricht",
+        "MESSAGE_PLACEHOLDER": "Erzählen Sie mir von Ihrem Projekt...",
+        "SUBMIT": "Nachricht senden",
+        "SENDING": "Wird gesendet...",
+        "SUCCESS_MESSAGE": "Vielen Dank! Ich werde mich in Kürze bei Ihnen melden."
+    },
+    "EXPERIENCE": {
+        "TITLE": "Beruflicher Werdegang",
+        "SUMMARY": "6 Jahre engagierte Front-End-Entwicklung, Beherrschung moderner Frameworks und Delivery-Pipelines.",
+        "FOCUS": "Spezialisierung auf React, Next.js, Vue und Angular zur Bereitstellung skalierbarer digitaler Lösungen.",
+        "GAME_ENG": "Umfirmierung in Richtung Game Studies and Engineering zur Erforschung von C++ und Echtzeitgrafik."
+    }
+}

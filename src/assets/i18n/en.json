@@ -1,0 +1,39 @@
+{
+    "HERO": {
+        "GREETING": "Hi, my name is",
+        "NAME": "Creative Developer.",
+        "SUBTITLE": "I build immersive digital experiences.",
+        "DESCRIPTION": "Specializing in high-performance web applications with a focus on creative UI/UX and 3D visualizations. Currently crafting premium solutions for modern brands.",
+        "CTA_PRIMARY": "View My Work",
+        "CTA_SECONDARY": "Contact Me"
+    },
+    "NAV": {
+        "ABOUT": "About",
+        "PARTNERSHIPS": "Partnerships",
+        "PROJECTS": "Projects",
+        "SKILLS": "Skills",
+        "CONTACT": "Contact"
+    },
+    "ABOUT": {
+        "TITLE": "About Me",
+        "BIO_TITLE": "Professional Biography",
+        "BIO_CONTENT": "With 6 years of experience in front-end development, I specialize in crafting high-performance, immersive web applications. My approach combines technical excellence with creative UI/UX design.",
+        "BENTO": {
+            "EXPERIENCE_LABEL": "Years of Experience",
+            "EXPERIENCE_VALUE": "6+",
+            "LOCATION_LABEL": "Based in",
+            "LOCATION_VALUE": "Austria, EU"
+        }
+    },
+    "PARTNERSHIPS": {
+        "TITLE": "Previous Partnerships",
+        "DETAIL": {
+            "CONTRIBUTION": "My Contribution",
+            "TECH_STACK": "Tech Stack",
+            "SUMMARY": "Quick Summary"
+        }
+    },
+    "COMMON": {
+        "BACK_TO_PARTNERSHIPS": "Back to Partnerships"
+    }
+}

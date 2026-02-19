@@ -1,0 +1,74 @@
+{
+    "NAME": "Ayoub Rezaei",
+    "ROLE": "Front-End Developer",
+    "LOCATION": "Klagenfurt, Austria",
+    "NAV": {
+        "ABOUT": "About",
+        "PARTNERSHIPS": "Partnerships",
+        "CONTACT": "Contact"
+    },
+    "HERO": {
+        "GREETING": "Hi, I am",
+        "NAME": "Ayoub Rezaei.",
+        "SUBTITLE": "Experienced Front-End Developer.",
+        "DESCRIPTION": "With 6 years of expertise in building high-performance web applications using React, Next.js, Vue, and Angular. Currently expanding my horizons into the immersive world of Game Engineering.",
+        "CTA_PRIMARY": "View My Work",
+        "CTA_SECONDARY": "Contact Me"
+    },
+    "ABOUT": {
+        "TITLE": "About Me",
+        "BIO_TITLE": "Professional Bio",
+        "BIO_CONTENT": "Creative Front-End Developer with 6 years of professional experience in building scalable, high-performance web applications. I specialize in modern architectures including React, Next.js, Vue, and Angular, delivering seamless digital experiences with a focus on clean, maintainable code.",
+        "ENGINEERING_TITLE": "Advanced Graphics Engineering",
+        "ENGINEERING_CONTENT": "Holding a Bachelor's in Software Engineering, I bridge the gap between pure web technologies and high-performance visualizations. My commitment to technical depth is demonstrated through expertise in OpenGL, WebGL, and Three.js.",
+        "BENTO": {
+            "EXPERIENCE_LABEL": "Experience",
+            "EXPERIENCE_VALUE": "6+ Years",
+            "STACK_LABEL": "Core Stack",
+            "TOOLS_LABEL": "DevOps & Automation",
+            "LOCATION_LABEL": "Location",
+            "LOCATION_VALUE": "Klagenfurt, Austria",
+            "CHESS_LABEL": "Chess Rating",
+            "CHESS_VALUE": "700-800 ELO",
+            "BODYBUILDING_LABEL": "Personal Discipline",
+            "BODYBUILDING_VALUE": "Bodybuilding",
+            "INTERESTS_TITLE": "Beyond Code"
+        }
+    },
+    "PARTNERSHIPS": {
+        "TITLE": "Previous Partnerships",
+        "DETAIL": {
+            "CONTRIBUTION": "My Contribution",
+            "TECH_STACK": "Tech Stack",
+            "SUMMARY": "Quick Summary"
+        }
+    },
+    "COMMON": {
+        "BACK_TO_PARTNERSHIPS": "Back to Partnerships"
+    },
+    "CONTACT": {
+        "TITLE": "Let's Connect",
+        "GET_IN_TOUCH": "Get in Touch",
+        "LOCATION_LABEL": "My Location",
+        "LOCATION_VALUE": "Klagenfurt, Austria",
+        "EMAIL_LABEL": "Professional Email",
+        "SOCIAL_LABEL": "Digital Presence",
+        "NAME": "Name",
+        "NAME_PLACEHOLDER": "Enter your name",
+        "EMAIL": "Email",
+        "EMAIL_PLACEHOLDER": "Enter your email",
+        "SUBJECT": "Subject",
+        "SUBJECT_PLACEHOLDER": "How can I help you?",
+        "MESSAGE": "Message",
+        "MESSAGE_PLACEHOLDER": "Tell me about your project...",
+        "SUBMIT": "Send Message",
+        "SENDING": "Sending...",
+        "SUCCESS_MESSAGE": "Thank you! I'll get back to you shortly."
+    },
+    "EXPERIENCE": {
+        "TITLE": "Professional Journey",
+        "SUMMARY": "6 years of dedicated front-end development, mastering modern frameworks and delivery pipelines.",
+        "FOCUS": "Specializing in React, Next.js, Vue, and Angular to deliver scalable digital solutions.",
+        "GAME_ENG": "Transitioning into Game Studies and Engineering to explore C++ and real-time graphics."
+    }
+}
